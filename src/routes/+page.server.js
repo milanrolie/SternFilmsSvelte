@@ -18,17 +18,16 @@ export async function load({ fetch}) {
 };
 
 const QUERY = `
-query MyQuery {
-  allArticles {
-    id
-    slug
+query Video {
+  allProjects {
     title
-    introtext
-    story
-    image {
+    date
+    video {
       url
     }
-    svg {
+    shortIntroduction
+    projectDescription
+    videoThumbnail {
       url
     }
   }
