@@ -1,14 +1,10 @@
 <script>
-<<<<<<< Updated upstream
   export let data;
-  console.log(data)
+  console.log(data);
+  import Hero from "$lib/components/Hero.svelte";
+  import Navigation from "$lib/components/Navigation.svelte";
+  
 </script>
 
-=======
-    import Hero from "$lib/Hero.svelte";
-    import Navigation from "../lib/Navigation.svelte";
-  </script>
-  
-  <Navigation />
-  <Hero />
->>>>>>> Stashed changes
+<Navigation />
+<Hero />

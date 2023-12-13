@@ -1,28 +1,27 @@
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-  import { onMount } from "svelte";
-  import video from "$lib/assets/HEADER_HOOGVLIET_V4_1.webm";
+  // import { gsap } from "gsap";
+  // import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+  // import { onMount } from "svelte";
 
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 
-  onMount(() => {
-    // gsap.from(".blur", {
-    //   delay: 0.5,
-    //   duration: 1.5,
-    //   stagger: 0.3,
-    //   ease: "Power4.easeOut",
-    //   opacity: 0,
-    // });
+  // onMount(() => {
+  //   // gsap.from(".blur", {
+  //   //   delay: 0.5,
+  //   //   duration: 1.5,
+  //   //   stagger: 0.3,
+  //   //   ease: "Power4.easeOut",
+  //   //   opacity: 0,
+  //   // });
 
-    gsap.from(".path-gsap", {
-      delay: 3,
-      duration: 1.5,
-      stagger: 0.05,
-      ease: "Power4.easeOut",
-      opacity: 0,
-    });
-  });
+  //   gsap.from(".path-gsap", {
+  //     delay: 3,
+  //     duration: 1.5,
+  //     stagger: 0.05,
+  //     ease: "Power4.easeOut",
+  //     opacity: 0,
+  //   });
+  // });
 </script>
 
 <section>
