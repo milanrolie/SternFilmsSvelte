@@ -18,18 +18,19 @@ export async function load({ fetch}) {
 };
 
 const QUERY = `
-query Video {
+{
   allProjects {
+    id
     title
-    date
-    video {
-      url
-    }
-    shortIntroduction
+    _status
+    _firstPublishedAt
     projectDescription
     videoThumbnail {
+      id
+      md5
       url
     }
+    slug
   }
 }
 `;
