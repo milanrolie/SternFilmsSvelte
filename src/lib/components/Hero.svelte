@@ -159,7 +159,6 @@
     justify-content: center;
     align-items: flex-end;
     padding: 2em;
-    padding-top: 4rem;
   }
 
   .background-wrapper {
@@ -297,10 +296,10 @@
 
   .gradient-circle {
     position: fixed;
-    width: 15rem;
+    width: 30rem;
     height: 15rem;
     background-color: rgb(121, 207, 250);
-    border-radius: 100%;
+    border-radius: 50%;
     filter: blur(200px);
     z-index: -1;
     transform: scale(0);
