@@ -4,48 +4,30 @@
 </script>
 
 <div class="container">
-
   <div class="video-container">
     <video autoplay loop muted playsinline src={data.project.video.url}>
   </div>
 
-  <section class="info-container">
-    <h1>{data.project.title}</h1>
+  <section>
+    <h2>{data.project.title}</h2>
     <span></span>
 
-    <div class="info-project">
-      <p class="date">
-        {data.project.date}
-      </p>
-      <p class="client"></p>
-    </div>
+    <div class="container-info-project">
+      <div class="date">
+        <h4>Date</h4>
+        <p class="date">{data.project.date}</p>
+      </div>
 
-    <article>
-      coming....
-    </article>
-    
+      <div class="client-info">
+        <h4>Opdrachtgever</h4>
+        <p class="client">coming..</p>
+      </div>
+    </div>
   </section>
 </div>
 
 <style>
-  .container { 
-    position: sticky;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-  }
-
-  .video-container {
-    width: 100%;
-    height: 100%;
-
-    & img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .info-container {
+  secton {
     position: absolute;
     color: white;
     background-color: rgba(0, 0, 0, 0.765);
@@ -62,6 +44,13 @@
       margin-top: 0.5rem;
       margin-bottom: 1rem;
     }
+  }
 
+  .container-info-project {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 50%;
+    height: 100%;
   }
 </style>
