@@ -34,13 +34,14 @@
 
 .info-container {
   position: absolute;
+  margin-top: 100vh;
   background-color: rgba(0, 0, 0, 0.635);
   width: 90%;
   left: 5%;
   height: 25vw;
   color:var(--main-offwhite);
   padding: var(--margin);
-  margin-top: 100vh;
+  border-radius: var(--borderr);
   background-color: rgba(0, 0, 0, 0.675);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -67,5 +68,6 @@ span {
 
 h1 {
   font-weight: 600;
+  font: 24px;
 }
 </style>
