@@ -1,5 +1,5 @@
 <nav>
-  <div class="logo">
+  <!-- <div class="logo">
     <svg
       width="184"
       height="73"
@@ -104,8 +104,8 @@
         />
       </g>
     </svg>
-  </div>
-  <div class="middle-nav">
+  </div> -->
+  <!-- <div class="middle-nav">
     <ul>
       <li>Work</li>
       <li>About</li>
@@ -114,6 +114,9 @@
   </div>
   <div class="right-nav">
     <div class="available">available for freelance</div>
+  </div> -->
+  <div class="menu-wrapper">
+    <p>menu</p>
   </div>
 </nav>
 
@@ -124,9 +127,9 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 10%;
-    color: var(--main-offwhite);
-    padding: 2em;
+    height: 4rem;
+    color: var(--main-dark);
+    padding: 1rem 2.2rem;
     text-transform: uppercase;
     align-items: center;
     z-index: 10;
@@ -146,6 +149,7 @@
 
   .logo {
     width: 10%;
+    opacity: .8;
   }
 
   svg {
@@ -154,8 +158,32 @@
 
   .available {
     padding: 0.6em 1.5em;
-    border: 1px solid var(--main-offwhite);
-    border-radius: 3em;
+    border: .5px solid var(--main-offwhite);
+    border-radius: .5rem;
     font-size: 0.9em;
+    font-size: .8rem;
   }
+
+  .menu-wrapper {
+    position: fixed;
+    right: 0;
+    top: 13%;
+    width: 4rem;
+    height: 5rem;
+    padding: 1rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: .5rem 0rem 0rem .5rem;
+  }
+
+  .menu-wrapper p {
+    writing-mode: sideways-rl;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: var(--main-offwhite);
+  }
+  
 </style>
