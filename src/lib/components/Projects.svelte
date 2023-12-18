@@ -34,12 +34,9 @@
             gsap.to(elements, { opacity: 0, stagger: 0.1 }),
         });
       });
-      
-      
     });
   });
 
-  
   function navigateWithDelay(event, url) {
     event.preventDefault();
     setTimeout(() => {
@@ -50,33 +47,60 @@
 
 <section>
   {#each data.allProjects as project}
-  <a href={project.slug} on:click={(event) => navigateWithDelay(event, project.slug)}>
-    <h1>{project.title}</h1>
     <div class="project-wrapper">
-      <video
-        class="video-flip"
-        loop
-        playsinline
-        muted
-        autoplay
-        src={project.video.url}
-        on:mouseenter={playVideo}
-        on:mouseleave={pauseVideo}
-      ></video>
+      <a
+        href={project.slug}
+        on:click={(event) => navigateWithDelay(event, project.slug)}
+      >
+        <div class="project video-flip">
+          <video
+            loop
+            playsinline
+            muted
+            autoplay
+            src={project.video.url}
+            on:mouseenter={playVideo}
+            on:mouseleave={pauseVideo}
+          ></video>
+        </div>
+      </a>
+      <div class="subscript-wrapper">
+        <div class="subscript">
+        <h3>{project.title}</h3>
+        <p>Project in one sentence</p>
+      </div>
+      <button>GO</button>
+      </div>
     </div>
-  </a>
   {/each}
 </section>
 
 <style>
   section {
     height: 100vh;
+    padding: var(--main-padding);
   }
 
   .project-wrapper {
-    width: 50%;
+    width: 60vw;
     position: relative;
+    margin-bottom: 15vh;
+  }
+
+  .project {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    overflow: hidden;
     aspect-ratio: 16/9;
+    margin-bottom: 2rem;
+  }
+
+  .project-wrapper:nth-of-type(even) {
+    margin-left: 30vw;
   }
 
   video {
@@ -88,7 +112,9 @@
     object-fit: cover;
     z-index: 10;
     filter: grayscale(90%);
-    transition: filter 0.5s, opacity 0.5s;
+    transition:
+      filter 0.5s,
+      opacity 0.5s;
     opacity: 0.5;
   }
 
@@ -104,5 +130,49 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
+  }
+
+  .subscript-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: .2rem;
+  }
+
+  p {
+    font-size: .8rem;
+    font-weight: 100;
+    margin-top: .5rem;
+    opacity: .8;
+  }
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+    background-color: aqua;
+  }
+
+  button {
+    padding: .5rem 3rem;
+    border: none;
+    border-radius: 5rem;
+    color: var(--main-offwhite);
+    font-size: .8rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    cursor: pointer;
+    background: none;
+    border: solid 1px var(--main-offwhite);
+    transition: all .3s;
+  }
+
+  button:hover {
+    background: var(--main-offwhite);
+    color: var(--main-dark);
   }
 </style>
