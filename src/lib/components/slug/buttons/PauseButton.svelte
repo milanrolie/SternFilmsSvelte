@@ -7,11 +7,7 @@
     const pauseButton = document.querySelector("#pause");
     
     pauseButton.addEventListener("click", () => {
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
+      video.paused ? video.play() : video.pause();
     });
   
   });

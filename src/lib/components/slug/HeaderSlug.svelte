@@ -1,10 +1,10 @@
 <script>
   export let data;
 
-  import InfoButton from "./InfoButton.svelte";
-  import PlayButton from "./PlayButton.svelte";
-  import PauseButton from "./PauseButton.svelte";
-  import MuteButton from "./MuteButton.svelte";
+  import InfoButton from "./buttons/InfoButton.svelte";
+  import PlayButton from "./buttons/PlayButton.svelte";
+  import PauseButton from "./buttons/PauseButton.svelte";
+  import MuteButton from "./buttons/MuteButton.svelte";
   import Description from "./Description.svelte";
   import Article from "./Article.svelte";
 </script>
