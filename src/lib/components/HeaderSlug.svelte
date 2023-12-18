@@ -3,65 +3,69 @@
   console.log(data)
 </script>
 
-<div class="container">
+<div class="video-container">
+  <video autoplay loop muted playsinline src={data.project.video.url}>
+</div>
 
-  <div class="video-container">
-    <video autoplay loop muted playsinline src={data.project.video.url}>
-  </div>
+<div class="info-container">
+  <h1>{data.project.title}</h1>
 
-  <section class="info-container">
-    <h1>{data.project.title}</h1>
-    <span></span>
+  <span></span>
 
-    <div class="info-project">
-      <p class="date">
-        {data.project.date}
-      </p>
-      <p class="client"></p>
+  <div class="description">
+    <div class="date">
+      <h4>Date:</h4>
+      <p>{data.project.date}</p>
     </div>
 
-    <article>
-      coming....
-    </article>
-    
-  </section>
+   <div class="client">
+      <h4>Client:</h4>
+      <p>{data.project.client}</p>
+    </div>
+  </div>
 </div>
 
 <style>
-  .container { 
-    position: sticky;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-  }
+.video-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
 
-  .video-container {
-    width: 100%;
-    height: 100%;
+.info-container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.635);
+  width: 90%;
+  left: 5%;
+  height: 25vw;
+  color:var(--main-offwhite);
+  padding: var(--margin);
+  margin-top: 100vh;
+  background-color: rgba(0, 0, 0, 0.675);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
 
-    & img {
-      width: 100%;
-      height: 100%;
-    }
-  }
+span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin: 1rem 0;
+}
 
-  .info-container {
-    position: absolute;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.765);
-    bottom: 0;
-    left: 5%;
-    width: 90%;
-    height: 20vw;
-    padding: var(--margin);
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 80%
+}
 
-    & span {
-      display: flex;
-      width: 100%;
-      border-bottom: 1px solid white;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-    }
+.date {
+  margin-bottom: 1rem;
+}
 
-  }
+h1 {
+  font-weight: 600;
+}
 </style>
