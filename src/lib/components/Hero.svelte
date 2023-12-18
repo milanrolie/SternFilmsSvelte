@@ -81,17 +81,32 @@
     }
 
     updategradientCirclePosition();
+    
+    gsap.from(".blur-gsap", {
+      delay: 3,
+      duration: 1.5,
+      ease: "Expo.easeOut",
+      filter: 'blur(50px)'
+    });
 
     let tl = gsap.timeline();
 
     tl.from(".move", {
-      delay: 4,
+      delay: 3.5,
       y: "100%",
       opacity: 0,
       duration: 1.5,
       ease: "Expo.easeOut",
-      stagger: 0.1,
+      stagger: 0.2,
     });
+    
+    tl.from(".circle", {
+      delay: 0,
+      duration: 1.5,
+      ease: "Expo.easeOut",
+      opacity: 0,
+    });
+    
   });
 </script>
 
@@ -102,7 +117,7 @@
     <div class="yellow blur"></div>
     <div class="red blur"></div>
     <img src={gradientBG} alt="" />
-    <video src={Showreel} loop autoplay muted></video>
+    <video class="blur-gsap" src={Showreel} loop autoplay muted></video>
     <h1>
       <span class="indent"> </span> 
     
@@ -216,7 +231,7 @@
 
   svg {
     height: 0.6em;
-    transform: translateY(3px) translateX(0px);
+    /* transform: translateY(3px) translateX(0px); */
     opacity: 1;
   }
 
@@ -226,7 +241,7 @@
     max-width: 60%;
     font-weight: 300;
     /* text-indent: 6vw; */
-    line-height: 1.1em;
+    line-height: 1.2em;
     z-index: 15;
     text-align: left;
   }
@@ -261,6 +276,7 @@
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    pointer-events: none;
   }
 
   :is(.show) {
@@ -289,6 +305,7 @@
     z-index: -1;
     transform: scale(0);
     transition: transform 0.5s;
+    pointer-events: none;
   }
 
   .background-wrapper:not(:hover) ~ .gradient-circle {

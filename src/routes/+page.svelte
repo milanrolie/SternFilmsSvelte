@@ -1,29 +1,27 @@
 <script>
   export let data;
-  // console.log(data); 
   import Hero from "$lib/components/Hero.svelte";
   import Navigation from "$lib/components/Navigation.svelte";
   import CursorGradient from "../lib/components/CursorGradient.svelte";
   import IntroAnimation from "../lib/components/IntroAnimation.svelte";
   import Introduction from "../lib/components/Introduction.svelte";
+  import Projects from "../lib/components/Projects.svelte";
+
+  console.log(data);
   
 </script>
 
 <IntroAnimation />
-<CursorGradient />
+<!-- <CursorGradient /> -->
 <Navigation />
 <Hero />
 <Introduction />
+<Projects {data} />
 
 
 <div class="grain" />
 
-{#each data.allProjects as project }
-<div class="bottom">
-  <h1>{project.title}</h1>
-  <a href={project.slug}>project</a>
-</div>
-{/each}
+
 
 <style>
 

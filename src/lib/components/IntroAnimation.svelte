@@ -10,7 +10,6 @@
       duration: 2,
       opacity: 0,
       stagger: 0.05,
-      // ease: "steps(1)",
     });
 
     gsap.from(".sternfilms", {
@@ -35,8 +34,8 @@
     });
 
     gsap.to(".gsap-reveal", {
-      delay: 3.5,
-      duration: 2,
+      delay: 3,
+      duration: 1.5,
       ease: "power4.out",
       y: "100%",
     });
