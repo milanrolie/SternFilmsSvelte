@@ -15,7 +15,7 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: none;
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
 
   button:hover {

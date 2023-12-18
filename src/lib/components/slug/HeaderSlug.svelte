@@ -1,12 +1,12 @@
 <script>
+  export let data;
+
   import InfoButton from "./InfoButton.svelte";
   import PlayButton from "./PlayButton.svelte";
   import PauseButton from "./PauseButton.svelte";
   import MuteButton from "./MuteButton.svelte";
   import Description from "./Description.svelte";
   import Article from "./Article.svelte";
-  export let data
-  console.log(data)
 </script>
 
 <div class="video-container">
@@ -18,7 +18,7 @@
 <section class="info-container">
   <InfoButton />
   <PlayButton />  
-  <PauseButton />
+  <PauseButton class="pause" />
   <MuteButton /> 
   <h1>{data.project.title}</h1>
   <span></span>

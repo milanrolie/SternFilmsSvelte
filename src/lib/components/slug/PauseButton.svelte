@@ -1,8 +1,23 @@
 <script>
   import Pause from '$lib/assets/pause.svg';
+  import { onMount } from "svelte";
+
+  onMount(() => {
+    const video = document.querySelector("video");
+    const pauseButton = document.querySelector("#pause");
+    
+    pauseButton.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  
+  });
 </script>
 
-<button>
+<button id="pause">
     <img src={Pause} alt="">  
 </button>
 
