@@ -5,6 +5,8 @@
     --main-blue: #002C4A;
     --accent-blue: #FFE7CE;
     --main-offwhite: #e5e3d7;
+
+    --margin: 2rem;
 }
 
 * {

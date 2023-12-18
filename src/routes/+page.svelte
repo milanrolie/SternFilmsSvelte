@@ -10,7 +10,7 @@
 </script>
 
 <IntroAnimation />
-<!-- <CursorGradient /> -->
+<CursorGradient />
 <Navigation />
 <Hero />
 <Introduction />
@@ -18,7 +18,18 @@
 
 <div class="grain" />
 
+{#each data.allProjects as project }
+<div class="bottom">
+  <h1>{project.title}</h1>
+  <a href={project.slug}>project</a>
+</div>
+{/each}
+
 <style>
+
+  .bottom {
+    margin-bottom: 2rem;
+  }
   .grain {
     position: absolute;
     height: 100vh;
@@ -87,13 +98,7 @@
     }
   }
 </style>
-  // console.log(data)
 
-
-{#each data.allProjects as project }
-  <h1>{project.title}</h1>
-  <a href={project.slug}>project</a>
-{/each}
 
 <!-- {#each data.allProjects as project }
   <h1>{project.title}</h1>

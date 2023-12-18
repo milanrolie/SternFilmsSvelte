@@ -28,6 +28,10 @@ const QUERY = `query project($slug: String) {
         md5
         url
       }
+      date
+      video {
+        url
+      }
     }
   }`;
 // allProjects {
