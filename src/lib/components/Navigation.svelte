@@ -1,5 +1,5 @@
 <nav>
-  <!-- <div class="logo">
+  <div class="logo">
     <svg
       width="184"
       height="73"
@@ -104,7 +104,7 @@
         />
       </g>
     </svg>
-  </div> -->
+  </div>
   <!-- <div class="middle-nav">
     <ul>
       <li>Work</li>
@@ -129,7 +129,7 @@
     width: 100%;
     height: 4rem;
     color: var(--main-dark);
-    padding: 1rem 2.2rem;
+    padding: 8rem 4rem;
     text-transform: uppercase;
     align-items: center;
     z-index: 10;
