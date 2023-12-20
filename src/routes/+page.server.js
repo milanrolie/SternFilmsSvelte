@@ -19,23 +19,26 @@ export async function load({ fetch}) {
 };
 
 const QUERY = `
-{
+query Video {
   allProjects {
-    id
     title
-    _status
-    _firstPublishedAt
+    shortIntroduction
     projectDescription
-    videoThumbnail {
-      id
-      md5
+    date
+    videoLongMp4 {
       url
     }
-    slug
-    video {
+    videoLongWebm {
       url
     }
+    videoShortMp4 {
+      url
+    }
+    videoShortWebm {
+      url
+    }
+    projectInOneSentence
+    tags
   }
-  
 }
 `;
