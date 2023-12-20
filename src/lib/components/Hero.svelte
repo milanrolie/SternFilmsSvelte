@@ -1,5 +1,5 @@
 <script>
-  import Showreel from "$lib/assets/production_id_4460336 (1080p).mp4";
+  import Showreel from "$lib/assets/Showreel_Stern_2023_V1.webm";
   import gradientBG from "$lib/assets/gradientBG.png";
   import { onMount } from "svelte";
   import { gsap } from "gsap";
@@ -179,7 +179,7 @@
     width: 100%;
     height: 100%;
     z-index: 3;
-    opacity: 0.8;
+    opacity: 0.3;
     mix-blend-mode: multiply;
   }
 
@@ -189,6 +189,7 @@
     height: 100%;
     z-index: 2;
     transform: scale(1.05);
+    object-fit: cover;
   }
 
   .blur {

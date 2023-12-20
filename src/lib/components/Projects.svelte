@@ -6,7 +6,7 @@
   gsap.registerPlugin(Flip);
 
   export let data;
-  console.log(data);
+
 
   function playVideo(event) {
     event.target.play();
@@ -34,6 +34,7 @@
             gsap.to(elements, { opacity: 0, stagger: 0.1 }),
         });
       });
+      pauseVideo({ target: video.querySelector("video") }); // Pause video by default
     });
   });
 
