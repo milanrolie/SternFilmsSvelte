@@ -22,15 +22,18 @@
       requestAnimationFrame(raf);
   
       lenis.on("scroll", () => {
-        console.log('scrollieeee');
       });
-      console.log('hoi');
       gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
       });
   
       gsap.ticker.lagSmoothing(0);
+
+      onDestroy(() => {
+        lenis.destroy();
+      });
     });
+
   </script>
   
   <main>

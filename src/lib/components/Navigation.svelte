@@ -45,7 +45,7 @@
     padding: var(--main-padding);
     text-transform: uppercase;
     align-items: center;
-    z-index: 9999999;
+    z-index: 100;
   }
 
   .logo {

@@ -38,6 +38,12 @@
   height: 100vh;
 }
 
+video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
 .info-container {
   position: absolute;
   margin-top: 100vh;

@@ -7,7 +7,6 @@
 
   export let data;
 
-
   function playVideo(event) {
     event.target.play();
   }
@@ -19,6 +18,7 @@
   onMount(() => {
     const videos = document.querySelectorAll(".video-flip");
     videos.forEach((video) => {
+      pauseVideo({ target: video }); // Pause the video by default
       video.addEventListener("click", () => {
         const state = Flip.getState(video);
         video.classList.toggle("full-screen");
@@ -34,7 +34,6 @@
             gsap.to(elements, { opacity: 0, stagger: 0.1 }),
         });
       });
-      pauseVideo({ target: video.querySelector("video") }); // Pause video by default
     });
   });
 
@@ -53,8 +52,8 @@
         href={project.slug}
         on:click={(event) => navigateWithDelay(event, project.slug)}
       >
-        <div class="project video-flip">
-          <video
+        <div class="project ">
+          <video class="video-flip"
             loop
             playsinline
             muted
@@ -92,18 +91,17 @@
     width: 100%;
     height: 100%;
     position: relative;
-    overflow: hidden;
     border-radius: 1rem;
     cursor: pointer;
-    overflow: hidden;
-    aspect-ratio: 16/9;
     margin-bottom: 2rem;
-  }
+    aspect-ratio: 16/9;
 
+  }
+  
   .project-wrapper:nth-of-type(even) {
     margin-left: 30vw;
   }
-
+  
   video {
     position: absolute;
     top: 0;
@@ -114,14 +112,18 @@
     z-index: 10;
     filter: grayscale(90%);
     transition:
-      filter 0.5s,
-      opacity 0.5s;
+    filter 0.5s,
+    opacity 0.5s;
     opacity: 0.5;
+    aspect-ratio: 16/9;
+    border-radius: 1rem;
   }
 
   video:hover {
     filter: grayscale(0);
     opacity: 1;
+    aspect-ratio: none;
+
   }
 
   :is(.video-flip.full-screen) {
@@ -154,7 +156,6 @@
   a {
     text-decoration: none;
     color: currentColor;
-    background-color: aqua;
   }
 
   button {

@@ -6,10 +6,17 @@
   gsap.registerPlugin(ScrollTrigger);
 
   onMount(() => {
-    gsap.from(".gsap-path", {
+    gsap.to(".gsap-path", {
       duration: 2,
-      opacity: 0,
+      opacity: 1,
       stagger: 0.05,
+    });
+
+    gsap.to(".sternfilms", {
+      delay: 0,
+      duration: 2,
+      opacity: 1,
+      ease: "power4.out",
     });
 
     gsap.from(".sternfilms", {
@@ -165,9 +172,13 @@
     justify-content: center;
     top: 0;
     left: 0;
-    z-index: 20;
+    z-index: 9999999;
     background-color: var(--main-dark);
     pointer-events: none;
+  }
+
+  .gsap-path {
+    opacity: 0;
   }
 
   .logo-wrapper {
@@ -191,6 +202,7 @@
       calc((1 - var(--progress)) * 100%) 100%,
       0% 100%
     );
+    opacity: 0;
   }
 
 
