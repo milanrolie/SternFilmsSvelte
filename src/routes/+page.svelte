@@ -7,7 +7,7 @@
   import Introduction from "../lib/components/Introduction.svelte";
   import Projects from "../lib/components/Projects.svelte";
 
-  console.log(data);
+  // console.log(data);
   
 </script>
 

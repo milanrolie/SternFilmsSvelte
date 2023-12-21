@@ -1,5 +1,6 @@
 <script>
   export let data;
+  console.log(data)
 
   import InfoButton from "./buttons/InfoButton.svelte";
   import PauseButton from "./buttons/PauseButton.svelte";
@@ -9,16 +10,16 @@
   import { onMount } from "svelte";
 
   onMount(() => {
-    const video = document.querySelector("video");
+    // const video = document.querySelector("video");
 
-    function showTimeline () {
-    }
+    // function showTimeline () {
+    // }
 
   })
 </script>
 
 <div class="video-container">
-  <video autoplay loop muted playsinline src={data.project.video.url}>
+  <video autoplay loop muted playsinline src={data.project.videoShortWebm.url}>
 </div>
 
 

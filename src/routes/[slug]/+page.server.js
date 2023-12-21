@@ -11,29 +11,35 @@ export async function load({ fetch, params }) {
       variables: { slug },
     }),
   });
-
   const { data } = await response.json();
 
   return data;
 }
 
-const QUERY = `query project($slug: String) {
+const QUERY = `query Video($slug: String) {
   project(filter: {slug: {eq: $slug}}) {
-      title
-      _status
-      _firstPublishedAt
-      projectDescription
-      videoThumbnail {
-        id
-        md5
-        url
-      }
-      date
-      video {
-        url
-      }
+    id
+    title
+    videoLongWebm {
+      url
     }
-  }`;
+    videoShortMp4 {
+      url
+    }
+    videoShortWebm {
+      url
+    }
+    videoLongMp4 {
+      id
+    }
+    tags
+    projectInOneSentence
+    shortIntroduction
+    projectDescription
+    date
+    slug
+  }
+}`;
 // allProjects {
 //   id
 //   title

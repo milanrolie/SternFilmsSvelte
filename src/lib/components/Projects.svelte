@@ -6,6 +6,7 @@
   gsap.registerPlugin(Flip);
 
   export let data;
+  console.log(data);
 
   let isVideoPlaying = false;
   let isButtonHovered = false;
@@ -74,7 +75,7 @@
             playsinline
             muted
             autoplay
-            src={project.video.url}
+            src={project.videoShortWebm.url}
             on:mouseenter={playVideo}
             on:mouseleave={pauseVideo}
           ></video>

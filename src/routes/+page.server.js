@@ -14,7 +14,7 @@ export async function load({ fetch}) {
   
   const {data} = await response.json(QUERY);
   
-  console.log(data);
+  // console.log(data);
   return data ;
 };
 
@@ -22,6 +22,7 @@ const QUERY = `
 query Video {
   allProjects {
     title
+    slug
     shortIntroduction
     projectDescription
     date
