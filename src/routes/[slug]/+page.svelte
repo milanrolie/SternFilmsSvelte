@@ -10,8 +10,7 @@
 
 <Navigation />
 <HeaderSlug {data}/>
-<Allprojects />
-
+<Allprojects {data}/>
 <Footer />
 
 
