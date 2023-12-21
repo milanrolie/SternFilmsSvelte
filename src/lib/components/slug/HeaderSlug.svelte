@@ -19,6 +19,7 @@
 
 <div class="video-container">
   <video autoplay loop muted playsinline src={data.project.videoShortWebm.url}>
+  </video>
 </div>
 
 

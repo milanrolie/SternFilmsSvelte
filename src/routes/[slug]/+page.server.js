@@ -4,7 +4,7 @@ export async function load({ fetch, params }) {
   const response = await fetch("https://graphql.datocms.com", {
     method: "POST",
     headers: {
-      Authorization: `d688194135d9297a81eef054bce579`,
+      Authorization: `${PUBLIC_DATOCMS_TOKEN}`,
     },
     body: JSON.stringify({
       query: QUERY,
