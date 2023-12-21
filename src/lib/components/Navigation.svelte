@@ -23,7 +23,7 @@
 
   
   <div class="menu-wrapper">
-    <p>menu</p>
+    <svg data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path d="M97.092 36.078H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222zM97.092 61.889H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222zM97.092 87.7H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222z"/></svg>
   </div>
 </nav>
 
@@ -62,8 +62,9 @@
   }
 
   svg {
-    width: 7rem;
-    mix-blend-mode: difference;
+    width: 2rem;
+    height: 2rem;
+    fill: var(--main-offwhite);
   }
 
   .available {
@@ -76,16 +77,18 @@
 
   .menu-wrapper {
     position: fixed;
-    right: 0;
-    top: 13%;
-    width: 4rem;
-    height: 5rem;
-    padding: 1rem;
+    right: var(--main-padding);
+    top: var(--main-padding);
+    width: 3rem;
+    height: 3rem;
     cursor: pointer;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border-radius: .5rem 0rem 0rem .5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .menu-wrapper p {

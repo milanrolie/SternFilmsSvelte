@@ -6,6 +6,7 @@
   import Footer from "../lib/components/Footer.svelte";
   import IntroAnimation from "../lib/components/IntroAnimation.svelte";
   import Introduction from "../lib/components/Introduction.svelte";
+  import ProjectList from "../lib/components/ProjectList.svelte";
   import Projects from "../lib/components/Projects.svelte";
   import Allprojects from "../lib/components/slug/Allprojects.svelte"; 
   // console.log(data);
@@ -18,6 +19,7 @@
 <Hero />
 <Introduction />
 <Projects {data} />
+<ProjectList {data} />
 <Footer />
 
 <Allprojects {data} />
