@@ -1,12 +1,12 @@
 <script>
-  export let data;
+  // export let projectData;
 </script>
 
 <article>
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore assumenda nihil nobis aut accusantium perferendis, id molestias expedita ipsam. Provident porro ipsa omnis earum veniam voluptatum unde dolore! Sequi, quasi!
   </p>
 
-  <a href={data}>NEXT PROJECT</a>
+  <!-- <a href={projectData}>NEXT PROJECT</a> -->
 </article>
 
 <style>

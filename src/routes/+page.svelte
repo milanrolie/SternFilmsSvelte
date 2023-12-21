@@ -7,8 +7,7 @@
   import IntroAnimation from "../lib/components/IntroAnimation.svelte";
   import Introduction from "../lib/components/Introduction.svelte";
   import Projects from "../lib/components/Projects.svelte";
-
-
+  import Allprojects from "../lib/components/slug/Allprojects.svelte"; 
   // console.log(data);
   
 </script>
@@ -20,6 +19,11 @@
 <Introduction />
 <Projects {data} />
 <Footer />
+
+<Allprojects {data} />
+
+<div class="none">
+</div>
 
 
 <div class="grain" />
@@ -53,6 +57,10 @@
   .grain::before {
     animation: grain 5s steps(10) infinite;
   }
+
+  /* .none {
+    opacity: 0;
+  } */
 
 
   @keyframes grain {

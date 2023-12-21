@@ -1,5 +1,6 @@
 <script>
   export let data;
+  console.log(data);
 
   import InfoButton from "./buttons/InfoButton.svelte";
   import PauseButton from "./buttons/PauseButton.svelte";
@@ -18,13 +19,13 @@
 </script>
 
 <div class="video-container">
-  <video autoplay loop muted playsinline src={data.project.videoShortWebm.url}>
+  <video autoplay loop muted playsinline src={data.projectData.data.project.videoShortWebm.url}>
   </video>
 </div>
 
 
 
-<section class="info-container">
+<!-- <section class="info-container">
   <InfoButton />
 
   <div class="buttonVideo">
@@ -39,7 +40,7 @@
     <Description {data}/>
     <Article {data}/>
   </div>
-</section>
+</section> -->
 
 
 
