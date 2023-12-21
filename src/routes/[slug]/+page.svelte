@@ -12,7 +12,7 @@
 <HeaderSlug {data}/>
 <Allprojects />
 
-<!-- <Footer /> -->
+<Footer />
 
 
 

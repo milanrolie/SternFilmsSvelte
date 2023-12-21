@@ -8,14 +8,14 @@
   gsap.registerPlugin(ScrollTrigger);
 
   onMount(() => {
-    gsap.to("footer", {
+    gsap.from(".footer-wrapper", {
       scrollTrigger: {
         trigger: "footer",
         scrub: 1,
         start: "top-=700",
         end: "top",
       },
-      y: 0,
+      y: 150,
     });
   });
 </script>
@@ -33,7 +33,7 @@
         </p>
 
 </footer>
-<div class="filler"></div>
+<!-- <div class="filler"></div> -->
 
 <style>
   footer {
@@ -43,7 +43,10 @@
     background-color: var(--main-white);
     width: 100%;
     z-index: 0;
-    transform: translateY(-300px);
+    /* transform: translateY(-300px); */
+    background-color: rgba(0, 0, 0, 0.675);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
 
   .footer-wrapper {
