@@ -1,5 +1,6 @@
 <script>
   export let data;
+  console.log(data);
 
   import { onMount } from 'svelte';
   onMount(() => {
@@ -19,7 +20,6 @@
 </script>
 
 <div class="container-allprojects">
-
   {#each data.allProjects as all}
   <a href={all.slug}>
     <div class="container-project">
@@ -69,8 +69,5 @@
   video {
     height: 100%;
   }
-
-  
-
 </style>
 
