@@ -6,7 +6,6 @@
   gsap.registerPlugin(Flip);
 
   export let data;
-  console.log(data);
 
   let isVideoPlaying = false;
   let isButtonHovered = false;

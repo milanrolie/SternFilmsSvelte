@@ -1,6 +1,5 @@
 <script>
   export let data;
-  console.log(data)
 
   import InfoButton from "./buttons/InfoButton.svelte";
   import PauseButton from "./buttons/PauseButton.svelte";
@@ -37,7 +36,7 @@
 
   <div class="container-inner">
     <Description {data}/>
-    <Article {data} />
+    <Article {data}/>
   </div>
 </section>
 
@@ -45,7 +44,9 @@
 
 <style>
 .video-container {
-  position: fixed;
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
 }
@@ -57,8 +58,7 @@ video {
 }
 
 .info-container {
-  position: absolute;
-  margin-top: 100vh;
+  position: relative;
   background-color: rgba(0, 0, 0, 0.635);
   width: 100%;
   left: 0;
