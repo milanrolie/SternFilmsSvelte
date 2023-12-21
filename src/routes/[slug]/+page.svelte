@@ -10,7 +10,7 @@
 
 <Navigation />
 <HeaderSlug {data}/>
-<Footer />
+<!-- <Footer /> -->
 
 
 
