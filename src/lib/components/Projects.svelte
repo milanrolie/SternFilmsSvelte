@@ -101,7 +101,7 @@
               navigateWithDelay(event, project.slug);
               flipAnimation(document.querySelector('.video-flip'));
             }}
-            >Watch video</button
+            ><span class="button-text"> Watch video </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/></svg></button
           >
         </div>
     </div>
@@ -159,6 +159,7 @@
     aspect-ratio: none;
   }
 
+ 
   :is(.video-flip.full-screen) {
     position: fixed;
     top: 0;
@@ -194,6 +195,7 @@
   }
 
   button {
+    position: relative;
     padding: 0.5rem 3rem;
     border: none;
     border-radius: 5rem;
@@ -206,11 +208,47 @@
     background: none;
     border: solid 1px var(--main-offwhite);
     transition: all 0.3s;
+    min-width: 12rem;
   }
 
-  button:hover  {
-    background: var(--main-offwhite);
-    color: var(--main-dark);
+  svg {
+    position: absolute;
+    top: 40%;
+    right: 3rem;
+    width: .9rem;
+    height: .9rem;
+    margin-left: 0.5rem;
+    fill: var(--main-offwhite);
+    overflow: visible;
+    transform: translateY(-4px) translateX(2rem);
+    transition: all 0.3s;
+    opacity: 0;
+  }
+
+  button:hover svg {
+    opacity: 1;
+    transform: translateY(-4px)  translateX(.5rem); ;
+  }
+
+  .project-wrapper:hover svg {
+    opacity: 1;
+    transform: translateY(-4px)  translateX(.5rem); ;
+  }
+
+  .button-text {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    transition: all 0.3s;
+    width: 12rem;
+  }
+
+  button:hover .button-text {
+    transform: translateX(-.8rem);
+  }
+
+  .project-wrapper:hover  .button-text {
+    transform: translateX(-.8rem);
   }
 
   .project-wrapper:hover .video-flip {
