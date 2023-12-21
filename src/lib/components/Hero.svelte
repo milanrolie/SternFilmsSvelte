@@ -306,6 +306,7 @@
     transform: scale(0);
     transition: transform 0.5s;
     pointer-events: none;
+    display: none;
   }
 
   .background-wrapper:not(:hover) ~ .gradient-circle {

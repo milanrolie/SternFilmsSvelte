@@ -3,6 +3,7 @@
   import Hero from "$lib/components/Hero.svelte";
   import Navigation from "$lib/components/Navigation.svelte";
   import CursorGradient from "../lib/components/CursorGradient.svelte";
+  import Footer from "../lib/components/Footer.svelte";
   import IntroAnimation from "../lib/components/IntroAnimation.svelte";
   import Introduction from "../lib/components/Introduction.svelte";
   import Projects from "../lib/components/Projects.svelte";
@@ -12,12 +13,13 @@
   
 </script>
 
-<IntroAnimation />
+<!-- <IntroAnimation /> -->
 <!-- <CursorGradient /> -->
 <Navigation />
 <Hero />
 <Introduction />
 <Projects {data} />
+<Footer />
 
 
 <div class="grain" />

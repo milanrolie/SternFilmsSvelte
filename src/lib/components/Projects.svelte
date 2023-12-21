@@ -110,8 +110,10 @@
 
 <style>
   section {
-    height: 100vh;
+    position: relative;
     padding: var(--main-padding);
+    z-index: 5;
+    background-color: var(--main-dark);
   }
 
   .project-wrapper {
@@ -175,6 +177,7 @@
     font-size: 2rem;
     font-weight: 100;
     margin-bottom: 0.2rem;
+    color: var(--main-offwhite);
   }
 
   p {
@@ -182,6 +185,7 @@
     font-weight: 100;
     margin-top: 0.5rem;
     opacity: 0.8;
+    color: var(--main-offwhite);
   }
 
   a {

@@ -21,7 +21,6 @@
     </div>
   </a>
 
-  <button on:click={toggleDarkMode}>Dark mode</button>
   
   <div class="menu-wrapper">
     <p>menu</p>

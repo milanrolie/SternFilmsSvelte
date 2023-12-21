@@ -1,0 +1,99 @@
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+  import { onMount } from "svelte";
+  import gradientBG from "$lib/assets/gradientBG.png";
+
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  onMount(() => {
+    gsap.to("footer", {
+      scrollTrigger: {
+        trigger: "footer",
+        scrub: 1,
+        start: "top-=700",
+        end: "top",
+      },
+      y: 0,
+    });
+  });
+</script>
+
+<footer id="contact">
+  <div class="footer-wrapper">
+    <img src={gradientBG} alt="">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h2>Let's work together</h2>
+        <p>
+          I'm currently available for freelance work. If you have a project that
+          you want to get started, think you need my help with something or just
+          fancy saying hey, then get in touch.
+        </p>
+
+</footer>
+<div class="filler"></div>
+
+<style>
+  footer {
+    position: relative;
+    padding: var(--main-padding);
+    height: 90vh;
+    background-color: var(--main-white);
+    width: 100%;
+    z-index: 0;
+    transform: translateY(-300px);
+  }
+
+  .footer-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    border-radius: 1rem;
+    background: rgba(14, 14, 14, 0.76);
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  .footer-content {
+    width: 50%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+  }
+
+  .footer-left h2 {
+    font-size: 2rem;
+    font-weight: 100;
+    z-index: 5;
+  }
+
+  .footer-left p {
+    font-size: 0.8rem;
+    font-weight: 100;
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: 1122px) {
+  }
+
+  @media screen and (max-width: 700px) {
+
+  }
+</style>
