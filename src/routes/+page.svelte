@@ -13,7 +13,7 @@
   
 </script>
 
-<!-- <IntroAnimation /> -->
+<IntroAnimation />
 <!-- <CursorGradient /> -->
 <Navigation />
 <Hero />

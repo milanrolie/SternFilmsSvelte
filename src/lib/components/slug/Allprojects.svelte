@@ -17,16 +17,16 @@
     });
   });
 
+  console.log(data);
+
 </script>
+
 
 <div class="container-allprojects">
   {#each data.allProjects as all}
-  <a href={all.slug}>
     <div class="container-project">
       <p>{all.title}</p>
-      <video class="video" src={all.videoShortWebm.url} />
     </div>
-  </a>
   {/each}
 </div>
 

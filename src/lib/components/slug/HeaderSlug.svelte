@@ -80,14 +80,18 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,0.5760679271708684) 0%, rgba(0,0,0,0) 100%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5760679271708684) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
     opacity: 0;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
 
   .overlay.visible {
-    opacity: .5;
+    opacity: 0.5;
   }
 
   video {
