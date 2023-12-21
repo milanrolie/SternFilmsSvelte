@@ -7,6 +7,9 @@
   import MuteButton from "./buttons/MuteButton.svelte";
   import Description from "./Description.svelte";
   import Article from "./Article.svelte";
+  import AllProjects from "../slug/Allprojects.svelte";
+
+
   import { onMount } from "svelte";
 
   onMount(() => {
@@ -25,7 +28,7 @@
 
 
 
-<!-- <section class="info-container">
+<section class="info-container">
   <InfoButton />
 
   <div class="buttonVideo">
@@ -33,14 +36,16 @@
     <MuteButton /> 
   </div>
 
-  <h1>{data.project.title}</h1>
+  <h1>{data.projectData.data.project.title}</h1>
   <span></span>
 
   <div class="container-inner">
-    <Description {data}/>
-    <Article {data}/>
+    <Description data={data.projectData.data}/>
+    <Article data={data.projectData.data}/>
   </div>
-</section> -->
+
+  <AllProjects data={data.allProjectsData.data}/>
+</section>
 
 
 
