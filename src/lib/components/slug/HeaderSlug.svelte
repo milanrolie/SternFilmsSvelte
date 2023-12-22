@@ -36,36 +36,37 @@
   }
 </script>
 
-<div class="video-container">
-  <div class="overlay" class:visible={showOverlay}></div>
-  <video
-    autoplay
-    loop
-    muted
-    playsinline
-    src={data.projectData.data.project.videoShortWebm.url}
-  >
-  </video>
-</div>
-
-<section class="info-container">
-  <InfoButton />
-
-  <div class="buttonVideo">
-    <PauseButton />
-    <MuteButton />
+  <div class="video-container">
+    <div class="overlay" class:visible={showOverlay}></div>
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      src={data.projectData.data.project.videoShortWebm.url}
+    >
+    </video>
   </div>
+  
+  <section class="info-container">
+    <InfoButton />
+  
+    <div class="buttonVideo">
+      <PauseButton />
+      <MuteButton />
+    </div>
+  
+    <h1>{data.projectData.data.project.title}</h1>
+    <span></span>
+  
+    <div class="container-inner">
+      <Description data={data.projectData.data} />
+      <Article data={data.projectData.data} />
+    </div>
+    
+    <AllProjects data={data.allProjectsData.data} />
+  </section>
 
-  <h1>{data.projectData.data.project.title}</h1>
-  <span></span>
-
-  <div class="container-inner">
-    <Description data={data.projectData.data} />
-    <Article data={data.projectData.data} />
-  </div>
-
-  <AllProjects data={data.allProjectsData.data} />
-</section>
 
 <style>
   .video-container {
@@ -73,7 +74,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100vh;;
   }
 
   .overlay {
@@ -105,7 +106,7 @@
     background-color: rgba(0, 0, 0, 0.635);
     width: 100%;
     left: 0;
-    height: 25vw;
+    height: 100%;
     color: var(--main-offwhite);
     padding: var(--margin);
     background-color: rgba(0, 0, 0, 0.675);

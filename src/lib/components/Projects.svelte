@@ -74,6 +74,7 @@
             playsinline
             muted
             autoplay
+            preload="auto"
             src={project.videoShortWebm.url}
             on:mouseenter={playVideo}
             on:mouseleave={pauseVideo}

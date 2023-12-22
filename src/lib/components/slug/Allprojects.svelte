@@ -22,11 +22,12 @@
 
 
 <div class="container-allprojects">
+  <h2>Other Projects:</h2>
   {#each data.allProjects as all}
   <a href={all.slug}>
     <div class="container-project">
       <p>{all.title}</p>
-      <video class="video" src={all.videoShortWebm.url} />
+      <video preload="auto" class="video" src={all.videoShortWebm.url} />
     </div>
   </a>
   {/each}
@@ -36,15 +37,19 @@
 <style>
 
   .container-allprojects {
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: 0;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     padding-top: var(--);
-    overflow-y: scroll;
+    margin-top: 4rem;
+    overflow-y: auto;
   }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 300;
+  }
+
+
 
   a {
     text-decoration: none;
@@ -56,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     height: 10vw;
     opacity: 0.3;
     transition: 0.5s;
