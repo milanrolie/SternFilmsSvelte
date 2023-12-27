@@ -24,12 +24,14 @@
 <div class="container-allprojects">
   <h2>Other Projects:</h2>
   {#each data.allProjects as all}
-  <a href={all.slug}>
-    <div class="container-project">
-      <p>{all.title}</p>
-      <video preload="auto" class="video" src={all.videoShortWebm.url} />
-    </div>
-  </a>
+  <div class="border">
+    <a href={all.slug}>
+      <div class="container-project">
+        <p>{all.title}</p>
+        <video preload="auto" class="video" src={all.videoShortWebm.url} />
+      </div>
+    </a>
+  </div>
   {/each}
 </div>
 
@@ -47,9 +49,8 @@
   h2 {
     font-size: 32px;
     font-weight: 300;
+    padding-bottom: 2rem;
   }
-
-
 
   a {
     text-decoration: none;
@@ -64,13 +65,28 @@
     width: 100%;
     height: 10vw;
     opacity: 0.3;
-    transition: 0.5s;
-    padding-top: 1rem;
+    transition: .5s;
     margin: 0 auto;
   }
 
+  .border {
+    border-bottom: 1px solid var(--main-offwhite);
+    border-top: 1px solid var(--main-offwhite);
+  }
+
+  .border:nth-of-type(even) {
+    border-top: none;
+  }
+
+  .border:nth-of-type(even) {
+    border-bottom: none;
+  }
+
   .container-project:hover {
+    background-color: var(--main-offwhite);
+    color: black;
     opacity: 1;
+    padding-left: 1rem;
   }
 
   p {
