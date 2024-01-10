@@ -1,37 +1,69 @@
 <script>
   export let data;
-  // console.log(data);
+  console.log(data);
 
   import { onMount } from 'svelte';
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
   onMount(() => {
-  const containers = document.querySelectorAll('.container-project');
+    const containers = document.querySelectorAll('.container-project');
 
-  containers.forEach(container => {
-    container.addEventListener('mouseover', () => {
-      const video = container.querySelector('.video');
-      video ? video.play() : null;
+    containers.forEach(container => {
+     container.addEventListener('mouseover', () => {
+        const video = container.querySelector('.video');
+       video ? video.play() : null;
+      });
+
+      container.addEventListener('mouseleave', () => {
+        const video = container.querySelector('.video');
+        video ? video.pause() : null;
+      });
     });
 
-    container.addEventListener('mouseleave', () => {
-      const video = container.querySelector('.video');
-      video ? video.pause() : null;
+
+    gsap.registerPlugin(ScrollTrigger);
+    const elements = document.querySelectorAll('.container-project');
+
+    elements.forEach((element) => {
+      gsap.fromTo(element, {
+        opacity: 0,
+        y: 100,
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 100%',
+          end: 'bottom 80%',
+          toggleActions: 'play none none reverse',
+        }
+      });
     });
-  });
 });
+
 </script>
 
 
 <div class="container-allprojects">
-  <h2>Other Projects:</h2>
+  <h4>Other Projects:</h4>
   {#each data.allProjects as all}
-  <div class="border">
-    <a href={all.slug}>
-      <div class="container-project">
-        <p>{all.title}</p>
-        <video preload="auto" class="video" src={all.videoShortWebm.url} />
+    <div class="container-project">
+      <div class="container-video">
+
+        <a href={all.slug} />
+        <div class="container-left">
+          <video preload="auto" class="video" src={all.videoShortWebm.url} />
+          <span>{all.title}</span>
+        </div>
+        
+        <div class="container-right">
+          <p>{all.projectInOneSentence}</p>
+        </div>
+
       </div>
-    </a>
-  </div>
+    </div>
   {/each}
 </div>
 
@@ -40,57 +72,67 @@
 
   .container-allprojects {
     width: 100%;
-    height: 100vh;
-    padding-top: var(--);
-    margin-top: 4rem;
+    height: 100%;
+    margin-top: 15rem;
     overflow-y: auto;
   }
 
-  h2 {
-    font-size: 32px;
+  h4 {
+    font-size: 24px;
     font-weight: 300;
     padding-bottom: 2rem;
   }
-
   a {
-    text-decoration: none;
-    color: var(--main-offwhite);
-    font-weight: 300;
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
+  
   .container-project {
+    position: relative;;
+    border-bottom: 1px solid var(--main-offwhite);
+    border-top: 1px solid var(--main-offwhite);
+  }
+  
+  .container-project:nth-of-type(even) {
+    border-top: none;
+  }
+  
+  .container-project:nth-of-type(even) {
+    border-bottom: none;
+  }
+  .container-video {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 10vw;
-    opacity: 0.3;
+    height: 9rem;
     transition: .5s;
     margin: 0 auto;
+    opacity: .5;
   }
-
-  .border {
-    border-bottom: 1px solid var(--main-offwhite);
-    border-top: 1px solid var(--main-offwhite);
-  }
-
-  .border:nth-of-type(even) {
-    border-top: none;
-  }
-
-  .border:nth-of-type(even) {
-    border-bottom: none;
-  }
-
-  .container-project:hover {
-    background-color: var(--main-offwhite);
-    color: black;
-    opacity: 1;
+  
+  .container-video:hover {
     padding-left: 1rem;
+    transition: .5s;
+    opacity: 1;
   }
 
-  p {
-    font-size: 32px;
+  .container-left {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 5rem;
+  }
+
+  .container-right p{
+   padding-right: 1rem;
+  }
+
+  span {
+    font-size: 24px;
+    margin-left: 1rem;
   }
 
   video {
