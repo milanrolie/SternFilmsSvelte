@@ -107,7 +107,7 @@
     width: 100%;
     left: 0;
     height: 100%;
-    color: var(--main-offwhite);
+``    color: var(--main-offwhite);
     padding: var(--margin);
     background-color: rgba(0, 0, 0, 0.675);
     backdrop-filter: blur(5px);

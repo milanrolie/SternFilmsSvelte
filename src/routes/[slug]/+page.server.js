@@ -1,45 +1,5 @@
 import { PUBLIC_DATOCMS_TOKEN } from "$env/static/public";
-// export async function load({ fetch, params }) {
-//   const { slug } = params;
-//   const response = await fetch("https://graphql.datocms.com", {
-//     method: "POST",
-//     headers: {
-//       Authorization: `${PUBLIC_DATOCMS_TOKEN}`,
-//     },
-//     body: JSON.stringify({
-//       query: QUERY,
-//       variables: { slug },
-//     }),
-//   });
-//   const { data } = await response.json();
 
-//   return data;
-// }
-
-// const QUERY = `query Video($slug: String) {
-//   project(filter: {slug: {eq: $slug}}) {
-//     id
-//     title
-//     videoLongWebm {
-//       url
-//     }
-//     videoShortMp4 {
-//       url
-//     }
-//     videoShortWebm {
-//       url
-//     }
-//     videoLongMp4 {
-//       id
-//     }
-//     tags
-//      projectInOneSentence
-//     shortIntroduction
-//     projectDescription
-//     date
-//     slug
-//   }
-// }`;
 export async function load({ fetch, params }) {
   const { slug } = params;
 

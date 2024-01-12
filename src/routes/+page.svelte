@@ -22,7 +22,7 @@
 <ProjectList {data} />
 <Footer />
 
-<Allprojects {data} />
+<!-- <Allprojects {data} /> -->
 
 <div class="none">
 </div>
