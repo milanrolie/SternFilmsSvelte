@@ -50,14 +50,12 @@
   <h4>Other Projects:</h4>
   {#each data.allProjects as all}
 
-
-
     <div class="container-project">
       <div class="container-video">
 
         <a href={all.slug} />
         <div class="container-left">
-          <video preload="auto" class="video" src={all.videoShortWebm.url} />
+          <video muted preload="auto" class="video" src={all.videoShortWebm.url} />
           <span>{all.title}</span>
         </div>
         
