@@ -49,6 +49,9 @@
 <div class="container-allprojects">
   <h4>Other Projects:</h4>
   {#each data.allProjects as all}
+
+
+
     <div class="container-project">
       <div class="container-video">
 

@@ -16,6 +16,16 @@
 
   onMount(() => {
     window.addEventListener("mousemove", handleMouseMove);
+
+    const container = document.querySelector(".info-container")
+
+    window.addEventListener('load', () => {
+      container.style.transform = 'translateY(-100px)'
+
+      setTimeout(() => {
+        container.style.transform = 'translateY(0px)'
+      }, 1000) 
+    });
   });
 
   afterUpdate(() => {
@@ -112,6 +122,7 @@
     background-color: rgba(0, 0, 0, 0.675);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    transition: 1s ease;
   }
 
   span {
