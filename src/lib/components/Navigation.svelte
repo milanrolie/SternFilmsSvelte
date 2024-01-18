@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { gsap } from "gsap";
   import logo from "$lib/assets/logo.svg";
+  import menuImage from "$lib/assets/stern.jpeg";
 
   let darkMode = false;
 
@@ -57,6 +58,11 @@
       "<"
     );
 
+    tl.to("span", { y: 0, duration: 2, opacity: 1, ease: "Expo.easeOut", delay: 1 }, "<");
+
+    tl.to("h2", { y: 0, duration: 1,  ease: "Expo.easeOut", delay: 0 }, "<");
+
+
     menuButton.addEventListener("click", function () {
       tl.timeScale(1.5).play();
     });
@@ -75,15 +81,16 @@
   </a>
 
   <button class="menu-button">
-    <svg data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"
+    <svg class="button-click" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"
       ><path
         d="M97.092 36.078H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222zM97.092 61.889H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222zM97.092 87.7H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222z"
       /></svg
     >
   </button>
+
   <div class="menu-wrapper">
     <button class="close-button">
-      <svg viewBox="0 0 15 15" fill="" xmlns="http://www.w3.org/2000/svg">
+      <svg class="button-click" viewBox="0 0 15 15" fill="" xmlns="http://www.w3.org/2000/svg">
         <line
           x1="1.19685"
           y1="1.29289"
@@ -104,11 +111,19 @@
     </button>
 
     <div class="menu-container">
-      <ul class="nav-list">
-        <li><a href="#" class="menu-text-gsap">Home</a></li>
-        <li><a href="#" class="menu-text-gsap">Blog</a></li>
-        <li><a href="#" class="menu-text-gsap">Contact</a></li>
-      </ul>
+      <div class="img-wrapper">
+      </div>
+
+      <div class="list-wrapper">
+        <div class="heading">
+          <h2>MENU</h2>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#" class="menu-text-gsap">Home</a> <span>01</span></li>
+          <li><a href="#" class="menu-text-gsap">Work</a> <span>02</span></li>
+          <li><a href="#" class="menu-text-gsap">Contact</a><span>03</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>
@@ -144,10 +159,26 @@
   }
 
   a {
-    width: max-content;
+    /* width: max-content; */
+    text-decoration: none;
+    font-weight: 100;
+  }
+  .menu-button {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 4em;
+    right: 4em;
+    padding: 0.5rem;
+    background-color: rgba(128, 128, 128, 0.2);
+    border-radius: 50%;
+    opacity: 1;
+    z-index: 99999;
+    transition: 0.5s;
+
   }
 
-  svg {
+  .button-click {
     width: 2rem;
     height: 2rem;
     fill: var(--main-offwhite);
@@ -171,25 +202,9 @@
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     opacity: 1;
     transform: translateY(-3em);
-    z-index: 99999;
-  }
-
-  .menu-button {
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 4em;
-    right: 4em;
-    padding: 0.5rem;
-    background-color: rgba(128, 128, 128, 0.2);
-    border-radius: 50%;
-    opacity: 1;
     z-index: 99999;
   }
 
@@ -203,13 +218,58 @@
     padding: 0.5rem;
     z-index: 99999;
     cursor: pointer;
+    transition: 0.5s;
   }
 
-  button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
+  .close-button:hover,
+  .menu-button:hover {
+    scale: 1.1;
+  }
+
+  .menu-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  .img-wrapper {
+    width: 50%;
+    height: 100%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .list-wrapper {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--main-padding);
+  }
+
+  .heading {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    
+  }
+
+  h2 {
+    font-size: 6em;
+    font-weight: 300;
+    color: var(--main-offwhite);
+    border-bottom: 1px solid var(--main-offwhite);
+    width: 100%;
+    transform: translateY(-130%);
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 100%;
+    margin-top: var(--margin);
   }
 
   nav li {
@@ -219,6 +279,28 @@
     gap: 1em;
     align-items: baseline;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    border-bottom: 1px solid var(--main-offwhite);
+  }
+
+  span {
+    color: var(--main-offwhite);
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  .socials {
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--borderr);
+  }
+
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
   }
 
   .menu-text-gsap {
