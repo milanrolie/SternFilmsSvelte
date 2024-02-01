@@ -133,4 +133,16 @@
   video {
     height: 100%;
   }
+
+  @media (max-width: 768px) {
+    .container-allprojects {
+      width: 100%;
+      height: 100%;
+      margin-top: 15rem;
+      overflow: hidden;
+    }
+    p {
+      display: none;
+    }
+  }
 </style>
