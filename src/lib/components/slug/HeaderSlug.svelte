@@ -156,7 +156,10 @@
 
   @media (max-width: 768px) {
     .info-container {
-      padding: 1rem;
+      padding: 2rem;
+      font-size: 1rem;
+    transform: translateY(-5%);
+
     }
 
     .buttonVideo {

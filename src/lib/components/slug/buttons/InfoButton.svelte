@@ -8,14 +8,11 @@
     infoButton.addEventListener("click", () => {
       infoContainer.scrollIntoView({ behavior: "smooth" });
     });
-
+    
     window.addEventListener("scroll", (event) => {
       window.scrollY > 10
         ? (infoButton.style.display = "none")
         : (infoButton.style.display = "block");
-      if (window.innerWidth < 768) {
-        infoButton.style.display = "none";
-      }
     });
   });
 </script>
@@ -112,9 +109,8 @@
   }
 
   @media screen and (max-width: 768px) {
-    button {
-      top: 2rem;
-      right: 0;
+    .container {
+      display: none;
     }
   }
 </style>

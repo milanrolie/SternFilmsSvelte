@@ -31,29 +31,31 @@ export async function load({ fetch, params }) {
   `;
 
   const allProjectsQuery = `
-    query AllProjects {
-      allProjects {
-        title
-        slug
-        shortIntroduction
-        projectDescription
-        date
-        videoLongMp4 {
-          url
-        }
-        videoLongWebm {
-          url
-        }
-        videoShortMp4 {
-          url
-        }
-        videoShortWebm {
-          url
-        }
-        projectInOneSentence
-        tags
+  query Video {
+    allProjects {
+      title
+      shortIntroduction
+      projectDescription
+      date
+      videoLongMp4 {
+        url
+      }
+      videoLongWebm {
+        url
+      }
+      videoShortMp4 {
+        url
+      }
+      videoShortWebm {
+        url
+      }
+      projectInOneSentence
+      tags
+      thumbnail {
+        url
       }
     }
+  }
   `;
 
   const projectResponse = await fetch("https://graphql.datocms.com", {
