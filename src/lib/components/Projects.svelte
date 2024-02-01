@@ -311,6 +311,7 @@
       filter: grayscale(0);
       opacity: 1;
       border-radius: 1rem;
+      display: none;
     }
 
 

@@ -165,7 +165,7 @@
 <style>
   section {
     position: fixed;
-    height: 100vh;
+    height: 100svh;
     width: 100%;
     display: flex;
     align-items: center;
