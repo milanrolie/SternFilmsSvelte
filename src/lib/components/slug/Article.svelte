@@ -18,4 +18,10 @@
     height: 80%;
     line-height: var(--line-height);
   }
+
+  @media (max-width: 768px) {
+    article {
+      width: 100%;
+    }
+  }
 </style>

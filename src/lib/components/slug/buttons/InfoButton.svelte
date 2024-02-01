@@ -13,13 +13,16 @@
       window.scrollY > 10
         ? (infoButton.style.display = "none")
         : (infoButton.style.display = "block");
+      if (window.innerWidth < 768) {
+        infoButton.style.display = "none";
+      }
     });
   });
 </script>
 
 <div class="container">
   <button id="info">
-    <span class="button-text"> Watch video </span><svg
+    <span class="button-text"> Informatie </span><svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -106,5 +109,12 @@
 
   button:hover .button-text {
     transform: translateX(-0.8rem);
+  }
+
+  @media screen and (max-width: 768px) {
+    button {
+      top: 2rem;
+      right: 0;
+    }
   }
 </style>

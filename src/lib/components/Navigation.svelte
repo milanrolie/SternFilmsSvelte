@@ -37,18 +37,9 @@
       { opacity: 0, duration: 0.5, ease: "Expo.easeInOut", delay: 0.3 },
       "<"
     );
-    ".close-button",
-      { opacity: 1, duration: 0.001, ease: "Expo.easeInOut", delay: 1 },
-      "<";
     tl.to(
-      ".menu-wrapper",
-      {
-        width: "33%",
-        opacity: 1,
-        duration: 1,
-        ease: "circ.out",
-        delay: 0.1,
-      },
+      ".close-button",
+      { opacity: 1, duration: 0.001, ease: "Expo.easeInOut", delay: 1 },
       "<"
     );
     tl.to(
@@ -65,6 +56,64 @@
 
     closeMenu.addEventListener("click", function () {
       tl.timeScale(1.5).reverse();
+    });
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1000px)", () => {
+      tl.to(
+        ".menu-wrapper",
+        {
+          width: "33%",
+          opacity: 1,
+          duration: 0.5,
+          ease: "circ.out",
+          delay: 0.1,
+        },
+        "<"
+      );
+      tl.to(
+        ".close-button",
+        {
+          opacity: 1,
+          duration: 0.001,
+          ease: "Expo.easeInOut",
+          delay: 1,
+          display: "block",
+        },
+        "<"
+      );
+
+      tl.to(
+        ".menu-button",
+        { opacity: 0, duration: 0.5, ease: "Expo.easeInOut", delay: 0 },
+        "<"
+      );
+    });
+
+    mm.add("(max-width: 1000px)", () => {
+      tl.to(
+        ".menu-wrapper",
+        {
+          width: "100%",
+          opacity: 1,
+          duration: 1,
+          ease: "circ.out",
+          delay: 0.1,
+        },
+        "<"
+      );
+      tl.to(
+        ".close-button",
+        {
+          opacity: 1,
+          duration: 0.001,
+          ease: "Expo.easeInOut",
+          delay: 1,
+          display: "block",
+        },
+        "<"
+      );
     });
   });
 </script>
@@ -119,7 +168,9 @@
       <div class="list-wrapper">
         <ul class="nav-list">
           <li><a href="/" class="menu-text-gsap">Home</a> <span>01</span></li>
-          <li><a href="/#project-wrapper" class="menu-text-gsap">Work</a> <span>02</span></li>
+          <li>
+            <a href="/#project-wrapper" class="menu-text-gsap">Work</a> <span>02</span>
+          </li>
           <li><a href="#contact" class="menu-text-gsap">Contact</a><span>03</span></li>
         </ul>
       </div>
@@ -162,8 +213,7 @@
     text-decoration: none;
     font-weight: 100;
   }
-
-  .menu-button  {
+  .menu-button {
     display: flex;
     align-items: center;
     position: fixed;
@@ -178,11 +228,11 @@
     z-index: 99999;
     transition: 0.5s;
   }
-
+  /* 
   .menu-button:focus,
   .close-button:focus {
     border: rgb(238, 238, 238) 2px solid;
-  }
+  } */
 
   .button-click {
     width: 2rem;
@@ -216,15 +266,14 @@
 
   .close-button {
     stroke: #fff;
-    position: fixed;
-    top: 4em;
-    right: 4em;
-    opacity: 1;
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    opacity: 0;
     z-index: 2000;
     padding: 0.5rem;
     z-index: 99999;
     cursor: pointer;
-    transition: 0.5s;
   }
 
   .close-button:hover,
@@ -305,6 +354,9 @@
   } */
 
   @media (max-width: 768px) {
+    .menu-text-gsap {
+      font-size: 3em;
+    }
     nav {
       padding: 1rem;
     }
@@ -312,6 +364,18 @@
     .menu-button {
       top: 1em;
       right: 1em;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .menu-text-gsap {
+      font-size: 2.5em;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .menu-text-gsap {
+      font-size: 5em;
     }
   }
 </style>

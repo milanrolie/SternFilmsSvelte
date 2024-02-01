@@ -153,4 +153,19 @@
     top: -5.5rem;
     left: 4rem;
   }
+
+  @media (max-width: 768px) {
+    .info-container {
+      padding: 1rem;
+    }
+
+    .buttonVideo {
+      top: -3.5rem;
+      left: 1rem;
+    }
+
+    .container-inner {
+      flex-direction: column;
+    }
+  }
 </style>
