@@ -37,4 +37,12 @@ h4 {
 p {
   font-weight: 300;
 }
+
+@media (max-width: 768px) {
+  p {
+    padding-bottom: 1rem;
+    font-weight: 100;
+  }
+  }
+
 </style>

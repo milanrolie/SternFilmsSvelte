@@ -53,7 +53,7 @@
       <div class="container-video">
         <a href={all.slug} />
         <div class="container-left">
-          <video muted preload="auto" class="video" src={all.videoShortWebm.url} />
+          <img muted preload="auto" class="img" src={all.thumbnail.url} />
           <span>{all.title}</span>
         </div>
 
@@ -130,7 +130,7 @@
     margin-left: 1rem;
   }
 
-  video {
+  img {
     height: 100%;
   }
 
@@ -140,6 +140,10 @@
       height: 100%;
       margin-top: 15rem;
       overflow: hidden;
+    }
+
+    span {
+      font-weight: 100;
     }
     p {
       display: none;
