@@ -9,6 +9,7 @@
 
   export let data;
 
+
   let isVideoPlaying = false;
   let isButtonHovered = false;
 
@@ -88,6 +89,7 @@
             <source src={project.videoShortWebm.url} type="video/webm" />
             <source src={project.videoShortMp4.url} type="video/mp4" />
           </video>
+          <img src={project.thumbnail.url} alt="">
         </div>
       </a>
       <div class="subscript-wrapper">
@@ -167,6 +169,18 @@
     filter: grayscale(0);
     opacity: 1;
     aspect-ratio: none;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 10;
+    aspect-ratio: 16/9;
+    border-radius: 1rem;
   }
 
  
@@ -298,6 +312,7 @@
       opacity: 1;
       border-radius: 1rem;
     }
+
 
     button {
       margin-top: 1rem;

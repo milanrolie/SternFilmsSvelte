@@ -21,7 +21,6 @@ const QUERY = `
 query Video {
   allProjects {
     title
-    slug
     shortIntroduction
     projectDescription
     date
@@ -39,6 +38,9 @@ query Video {
     }
     projectInOneSentence
     tags
+    thumbnail {
+      url
+    }
   }
 }
 `;
