@@ -124,6 +124,7 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     transition: 1s ease;
+    transform: translateY(-6.5%);
   }
 
   span {
@@ -149,7 +150,7 @@
   .buttonVideo {
     position: absolute;
     gap: 0.5rem;
-    top: -3.5rem;
-    left: 1rem;
+    top: -5.5rem;
+    left: 4rem;
   }
 </style>

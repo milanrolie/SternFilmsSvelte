@@ -89,7 +89,7 @@
   </button>
 
   <div class="menu-wrapper">
-    <button class="close-button" tabindex="-1">
+    <button class="close-button">
       <svg
         class="button-click"
         viewBox="0 0 15 15"
