@@ -40,26 +40,31 @@
 
   onMount(() => {
     const videos = document.querySelectorAll(".video-flip");
-    videos.forEach((video) => {
-      pauseVideo({ target: video });
-      video.addEventListener("click", () => {
-        flipAnimation(video);
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      videos.forEach((video) => {
+        playVideo({ target: video });
       });
-    });
+    } else {
+      videos.forEach((video) => {
+        pauseVideo({ target: video });
+        video.addEventListener("click", () => {
+          flipAnimation(video);
+        });
+      });
+    }
   });
 
   function navigateWithDelay(event, url) {
-  event.preventDefault();
-  setTimeout(() => {
-    window.location.href = url;
-    const video = document.querySelector('.video-flip');
-    if (video) {
-      flipAnimation(video);
-    }
-  }, 1500);
-}
-
-
+    event.preventDefault();
+    setTimeout(() => {
+      window.location.href = url;
+      const video = document.querySelector('.video-flip');
+      if (video) {
+        flipAnimation(video);
+      }
+    }, 1500);
+  }
 </script>
 
 <section>
@@ -340,3 +345,4 @@
 
 
 </style>
+
