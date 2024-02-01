@@ -14,7 +14,6 @@ export async function load({ fetch}) {
   
   const {data} = await response.json(QUERY);
   
-  // console.log(data);
   return data ;
 };
 

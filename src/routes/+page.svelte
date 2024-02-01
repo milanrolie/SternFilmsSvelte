@@ -9,7 +9,6 @@
   import ProjectList from "../lib/components/ProjectList.svelte";
   import Projects from "../lib/components/Projects.svelte";
   import Allprojects from "../lib/components/slug/Allprojects.svelte"; 
-  // console.log(data);
   
 </script>
 

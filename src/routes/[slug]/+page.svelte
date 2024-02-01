@@ -6,6 +6,9 @@
   import ProjectList from '../../lib/components/ProjectList.svelte';
   import Description from '../../lib/components/slug/Description.svelte';
   export let data;
+
+  console.log(data);
+
 </script>
 
 <Navigation />
