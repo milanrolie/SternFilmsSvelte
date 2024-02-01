@@ -77,10 +77,12 @@
             muted
             autoplay
             preload="auto"
-            src={project.videoShortWebm.url}
             on:mouseenter={playVideo}
             on:mouseleave={pauseVideo}
-          ></video>
+          >
+            <source src={project.videoShortWebm.url} type="video/webm" />
+            <source src={project.videoShortMp4.url} type="video/mp4" />
+          </video>
           <img src={placeholder} alt="">
         </div>
       </a>
