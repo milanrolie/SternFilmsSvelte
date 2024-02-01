@@ -44,7 +44,7 @@
       delay: 3,
       duration: 1.5,
       ease: "power4.out",
-      y: "100%",
+      y: "100vh",
     });
   });
 </script>
@@ -205,5 +205,12 @@
     opacity: 0;
   }
 
+
+  @media (max-width: 768px) {
+    .logo-wrapper {
+      width: 100%;
+      font-size: 2rem;
+    }
+  }
 
 </style>
