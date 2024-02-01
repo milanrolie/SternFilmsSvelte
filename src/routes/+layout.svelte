@@ -51,9 +51,9 @@
 
     gsap.ticker.lagSmoothing(0);
 
-    onDestroy(() => {
-      lenis.destroy();
-    });
+    // onDestroy(() => {
+    //   lenis.destroy();
+    // });
   });
 </script>
 

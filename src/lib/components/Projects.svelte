@@ -69,38 +69,40 @@
   }
 </script>
 
+
+<video muted autoplay playsinline src="https://vimeo.com/283410247"></video>
 <section>
   {#each data.allProjects as project}
-    <div class="project-wrapper" id="project-wrapper">
-      <a
-        href={project.slug}
-        on:click={(event) => navigateWithDelay(event, project.slug)}
-      >
-        <div class="project">
-          <!-- <video
-            class="video-flip"
-            loop
-            playsinline
-            muted
-            autoplay
-            preload="auto"
-            on:mouseenter={playVideo}
-            on:mouseleave={pauseVideo}
-          >
-            <source src={project.externalVideo.url} />
-            <source src={project.videoShortWebm.url} type="video/webm" />
-            <source src={project.videoShortMp4.url} type="video/mp4" />
-          </video> -->
-          <video loop playsinline muted autoplay class="video-flip" src={project.externalVideo.url}></video>
-          <img src={project.thumbnail.url} alt="">
-        </div>
-      </a>
-      <div class="subscript-wrapper">
-        <div class="subscript">
-          <h3>{project.title}</h3>
-          <p>Project in one sentence</p>
-        </div>
-          <button
+  <div class="project-wrapper" id="project-wrapper">
+    <a
+    href={project.slug}
+    on:click={(event) => navigateWithDelay(event, project.slug)}
+    >
+    <div class="project">
+      <video
+        class="video-flip"
+        loop
+        playsinline
+        muted
+        autoplay
+        preload="auto"
+        on:mouseenter={playVideo}
+        on:mouseleave={pauseVideo}
+        >
+        <!-- <source src={project.externalVideo.url} /> -->
+        <source src={project.videoShortWebm.url} type="video/webm" />
+        <source src={project.videoShortMp4.url} type="video/mp4" />
+      </video>
+      <!-- <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/875250336?h=18db1e89de&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="InWork_Traineeship_FINAL_NOsubs"></iframe></div><script src={project.externalVideo.url}></script> -->
+      <img src={project.thumbnail.url} alt="">
+    </div>
+  </a>
+  <div class="subscript-wrapper">
+    <div class="subscript">
+      <h3>{project.title}</h3>
+      <p>Project in one sentence</p>
+    </div>
+    <button
             class:active={isButtonHovered}
             on:mouseenter={() => {
               isButtonHovered = true;
@@ -122,6 +124,7 @@
     </div>
   {/each}
 </section>
+
 
 <style>
   section {
