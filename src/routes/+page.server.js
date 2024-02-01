@@ -1,7 +1,7 @@
 import { PUBLIC_DATOCMS_TOKEN } from "$env/static/public";
 
 
-export async function load({ fetch}) {
+export async function load({ fetch }) {
   const response = await fetch('https://graphql.datocms.com', {
     method: 'POST',
     headers: {
@@ -11,10 +11,13 @@ export async function load({ fetch}) {
       query: QUERY
     }),
   });
+
+  const { data } = await response.json(QUERY);
   
-  const {data} = await response.json(QUERY);
+  console.log(data);
   
-  return data ;
+  return data;
+
 };
 
 const QUERY = `
@@ -41,7 +44,11 @@ query Video {
     thumbnail {
       url
     }
+    externalVideo {
+      url
+    }
     slug
   }
 }
 `;
+

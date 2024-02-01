@@ -9,6 +9,7 @@
 
   export let data;
 
+  console.log(data.allProjects[0].externalVideo.url);
 
   let isVideoPlaying = false;
   let isButtonHovered = false;
@@ -76,7 +77,7 @@
         on:click={(event) => navigateWithDelay(event, project.slug)}
       >
         <div class="project">
-          <video
+          <!-- <video
             class="video-flip"
             loop
             playsinline
@@ -86,9 +87,11 @@
             on:mouseenter={playVideo}
             on:mouseleave={pauseVideo}
           >
+            <source src={project.externalVideo.url} />
             <source src={project.videoShortWebm.url} type="video/webm" />
             <source src={project.videoShortMp4.url} type="video/mp4" />
-          </video>
+          </video> -->
+          <video loop playsinline muted autoplay class="video-flip" src={project.externalVideo.url}></video>
           <img src={project.thumbnail.url} alt="">
         </div>
       </a>
@@ -181,6 +184,7 @@
     z-index: 10;
     aspect-ratio: 16/9;
     border-radius: 1rem;
+    display: none;
   }
 
  
@@ -312,6 +316,10 @@
       opacity: 1;
       border-radius: 1rem;
       display: none;
+    }
+
+    img {
+      display: block;
     }
 
 
