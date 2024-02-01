@@ -3,6 +3,8 @@
   import { onMount } from "svelte";
   import { Flip } from "gsap/dist/Flip";
 
+  import placeholder from "$lib/assets/gradientBG.png";
+
   gsap.registerPlugin(Flip);
 
   export let data;
@@ -79,6 +81,7 @@
             on:mouseenter={playVideo}
             on:mouseleave={pauseVideo}
           ></video>
+          <img src={placeholder} alt="">
         </div>
       </a>
       <div class="subscript-wrapper">
