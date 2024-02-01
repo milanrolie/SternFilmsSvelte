@@ -62,7 +62,7 @@
 
 <section>
   {#each data.allProjects as project}
-    <div class="project-wrapper">
+    <div class="project-wrapper" id="project-wrapper">
       <a
         href={project.slug}
         on:click={(event) => navigateWithDelay(event, project.slug)}

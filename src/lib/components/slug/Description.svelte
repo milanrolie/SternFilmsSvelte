@@ -1,5 +1,6 @@
 <script>
-  export let data
+  export let data;
+  // console.log(data)
 </script>
 
     <div class="description">
@@ -10,7 +11,7 @@
     
       <div class="client">
         <h4>CLIENT:</h4>
-        <p>{data.project.client}</p>
+        <p>{data.project.title}</p>
       </div>
     </div>
 

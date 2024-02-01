@@ -43,12 +43,11 @@
     tl.to(
       ".menu-wrapper",
       {
-        height: "100svh",
+        width: "33%",
         opacity: 1,
-        duration: 1.2,
-        ease: "Expo.easeOut",
+        duration: 1,
+        ease: "circ.out",
         delay: 0.1,
-        y: "0",
       },
       "<"
     );
@@ -60,9 +59,6 @@
 
     tl.to("span", { y: 0, duration: 2, opacity: 1, ease: "Expo.easeOut", delay: 1 }, "<");
 
-    tl.to("h2", { y: 0, duration: 1,  ease: "Expo.easeOut", delay: 0 }, "<");
-
-
     menuButton.addEventListener("click", function () {
       tl.timeScale(1.5).play();
     });
@@ -73,7 +69,7 @@
   });
 </script>
 
-<nav>
+<nav aria-labelledby="mainmenulabel" role="navigation">
   <a href="/">
     <div class="logo">
       <img src={logo} alt="" />
@@ -81,7 +77,11 @@
   </a>
 
   <button class="menu-button">
-    <svg class="button-click" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"
+    <svg
+      class="button-click"
+      data-name="Layer 3"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 128 128"
       ><path
         d="M97.092 36.078H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222zM97.092 61.889H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222zM97.092 87.7H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222z"
       /></svg
@@ -89,8 +89,13 @@
   </button>
 
   <div class="menu-wrapper">
-    <button class="close-button">
-      <svg class="button-click" viewBox="0 0 15 15" fill="" xmlns="http://www.w3.org/2000/svg">
+    <button class="close-button" tabindex="-1">
+      <svg
+        class="button-click"
+        viewBox="0 0 15 15"
+        fill=""
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <line
           x1="1.19685"
           y1="1.29289"
@@ -111,17 +116,11 @@
     </button>
 
     <div class="menu-container">
-      <div class="img-wrapper">
-      </div>
-
       <div class="list-wrapper">
-        <div class="heading">
-          <h2>MENU</h2>
-        </div>
         <ul class="nav-list">
-          <li><a href="#" class="menu-text-gsap">Home</a> <span>01</span></li>
-          <li><a href="#" class="menu-text-gsap">Work</a> <span>02</span></li>
-          <li><a href="#" class="menu-text-gsap">Contact</a><span>03</span></li>
+          <li><a href="/" class="menu-text-gsap">Home</a> <span>01</span></li>
+          <li><a href="/#project-wrapper" class="menu-text-gsap">Work</a> <span>02</span></li>
+          <li><a href="#contact" class="menu-text-gsap">Contact</a><span>03</span></li>
         </ul>
       </div>
     </div>
@@ -163,19 +162,25 @@
     text-decoration: none;
     font-weight: 100;
   }
-  .menu-button {
+  .menu-button  {
     display: flex;
     align-items: center;
     position: fixed;
     top: 4em;
     right: 4em;
     padding: 0.5rem;
-    background-color: rgba(128, 128, 128, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border-radius: 50%;
     opacity: 1;
     z-index: 99999;
     transition: 0.5s;
+  }
 
+  .menu-button:focus,
+  .close-button:focus {
+    border: rgb(238, 238, 238) 2px solid;
   }
 
   .button-click {
@@ -195,16 +200,16 @@
   .menu-wrapper {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 0px;
+    right: 0;
+    width: 0;
+    height: 100svh;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(53, 53, 53, 0.4);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     overflow: hidden;
     opacity: 1;
-    transform: translateY(-3em);
+    /* transform: translateY(-3em); */
     z-index: 99999;
   }
 
@@ -232,19 +237,9 @@
     width: 100%;
   }
 
-  .img-wrapper {
-    width: 50%;
-    height: 100%;
-
-    & img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
   .list-wrapper {
     height: 100%;
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: var(--main-padding);
@@ -252,16 +247,6 @@
 
   .heading {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    
-  }
-
-  h2 {
-    font-size: 6em;
-    font-weight: 300;
-    color: var(--main-offwhite);
-    border-bottom: 1px solid var(--main-offwhite);
-    width: 100%;
-    transform: translateY(-130%);
   }
 
   ul {
@@ -294,7 +279,6 @@
     height: 100%;
     border-radius: var(--borderr);
   }
-
 
   button {
     background: transparent;

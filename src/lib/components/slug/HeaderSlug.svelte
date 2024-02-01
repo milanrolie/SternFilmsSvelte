@@ -109,6 +109,7 @@
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    aspect-ratio: 16/9;
   }
 
   .info-container {

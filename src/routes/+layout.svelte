@@ -73,6 +73,7 @@
 
     --margin: 4rem;
     --borderr: 0.5rem;
+    --line-height: 1.5;
   }
 
   button {
