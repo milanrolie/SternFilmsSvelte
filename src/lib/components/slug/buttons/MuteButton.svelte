@@ -1,5 +1,7 @@
 <script>
   import Mute from '$lib/assets/mute.svg';
+  import unMute from '$lib/assets/unmute.svg';
+
   import { onMount } from 'svelte';
 
   onMount(() => {
@@ -8,6 +10,10 @@
 
     muteButton.addEventListener('click', () => {
       video.muted ? (video.muted = false) : (video.muted = true);
+    });
+
+    video.addEventListener('volumechange', () => {
+      muteButton.innerHTML = video.muted ? `<img src=${Mute} alt="">` : `<img src=${unMute} alt="">`;
     });
   });
 
