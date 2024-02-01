@@ -7,7 +7,7 @@
   import Description from '../../lib/components/slug/Description.svelte';
   export let data;
 
-  console.log(data);
+  // console.log(data);
 
 </script>
 

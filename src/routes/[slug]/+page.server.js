@@ -54,6 +54,7 @@ export async function load({ fetch, params }) {
       thumbnail {
         url
       }
+      slug
     }
   }
   `;
@@ -85,8 +86,4 @@ export async function load({ fetch, params }) {
   const allProjectsData = await allProjectsResponse.json();
 
   return { projectData, allProjectsData };
-  
-
 }
-
-

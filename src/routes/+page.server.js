@@ -41,6 +41,7 @@ query Video {
     thumbnail {
       url
     }
+    slug
   }
 }
 `;

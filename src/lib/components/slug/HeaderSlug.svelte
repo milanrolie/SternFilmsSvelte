@@ -1,5 +1,6 @@
 <script>
   export let data;
+  console.log(data);
 
   import InfoButton from "./buttons/InfoButton.svelte";
   import PauseButton from "./buttons/PauseButton.svelte";
