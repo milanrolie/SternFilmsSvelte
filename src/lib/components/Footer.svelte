@@ -119,6 +119,37 @@
   }
 
   @media screen and (max-width: 700px) {
+    footer {
+      height: 50vh;
+      padding: 1rem;
+    }
+
+    .footer-wrapper {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .footer-content {
+      width: 100%;
+    }
+
+    .footer-left {
+      width: 100%;
+    }
+
+    .footer-left h2 {
+      font-size: 1.5rem;
+    }
+
+    .footer-left p {
+      font-size: 0.8rem;
+    }
+
+    a {
+      font-size: 2rem;
+      left: 1rem;
+      bottom: 1rem;
+    }
 
   }
 </style>

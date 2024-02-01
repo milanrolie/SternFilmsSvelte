@@ -162,6 +162,7 @@
     text-decoration: none;
     font-weight: 100;
   }
+
   .menu-button  {
     display: flex;
     align-items: center;
@@ -302,4 +303,15 @@
     bottom: 0;
     color: var(--main-offwhite);
   } */
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem;
+    }
+
+    .menu-button {
+      top: 1em;
+      right: 1em;
+    }
+  }
 </style>

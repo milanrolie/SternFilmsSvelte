@@ -130,6 +130,10 @@
       padding: 1rem;
     }
 
+    .text-indent {
+      text-indent: 2rem;
+    }
+
     .introduction {
       font-size: 2rem;
       margin-right: 0;
