@@ -9,9 +9,11 @@ let mouseX = 0;
 let mouseY = 0;
 
 onMount(() => {
-  addEventListener("mousemove", handleMouseMove);
+  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    addEventListener("mousemove", handleMouseMove);
+  }
 
-  gsap.to(".gradient-circle", {
+  gsap.to(".circleColor", {
     scrollTrigger: {
       trigger: "body",
       scrub: true,
@@ -42,9 +44,8 @@ function updateDivPosition() {
 
 </script>
 
-<div class="gradient-circle">
-
-</div>
+<div class="gradient-circle circleColor"></div>
+<div class="gradient-circle-mobile circleColor"></div>
 
 <style>
  .gradient-circle {
@@ -56,5 +57,29 @@ function updateDivPosition() {
     filter: blur(150px);
     z-index: 1;
     transform: translateX(-50%) translateY(-50%);
+}
+
+.gradient-circle-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .gradient-circle-mobile {
+    position: fixed;
+    width: 15rem;
+    height: 15rem;
+    background-color: rgb(121, 207, 250);
+    border-radius: 100%;
+    filter: blur(150px);
+    z-index: 1;
+    transform: translateX(-50%) translateY(-50%);
+    top: 30%;
+    left: 10%;
+    display: block;
+  }
+
+  .gradient-circle {
+  display: none;
+  }
 }
 </style>
