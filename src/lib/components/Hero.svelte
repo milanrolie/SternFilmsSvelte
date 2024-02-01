@@ -332,4 +332,19 @@
   .words {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   } */
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5em;
+      max-width: 100%;
+    }
+
+    .circle {
+      display: none;
+    }
+
+    .gradient-circle {
+      display: none;
+    }
+  }
 </style>

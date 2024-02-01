@@ -59,7 +59,7 @@
 
 <main>
   <slot />
-  <button on:click={toggleDarkMode}>Dark mode</button>
+  <!-- <button on:click={toggleDarkMode}>Dark mode</button> -->
 </main>
 
 <style>

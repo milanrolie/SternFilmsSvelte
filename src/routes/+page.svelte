@@ -12,8 +12,8 @@
   
 </script>
 
-<IntroAnimation />
-<!-- <CursorGradient /> -->
+<!-- <IntroAnimation /> -->
+<CursorGradient />
 <Navigation />
 <Hero />
 <Introduction />

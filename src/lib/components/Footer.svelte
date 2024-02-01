@@ -32,6 +32,11 @@
           fancy saying hey, then get in touch.
         </p>
 
+          <a href="mailto:filmsstern@gmail.com">contact@sternfilms.nl</a>
+
+          
+                    
+
 </footer>
 <!-- <div class="filler"></div> -->
 
@@ -42,11 +47,11 @@
     height: 90vh;
     background-color: var(--main-white);
     width: 100%;
-    z-index: 0;
+    z-index: 1;
     /* transform: translateY(-300px); */
-    background-color: rgba(0, 0, 0, 0.675);
+    /* background-color: rgba(0, 0, 0, 0.675);
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
   }
 
   .footer-wrapper {
@@ -55,7 +60,7 @@
     justify-content: space-between;
     height: 100%;
     border-radius: 1rem;
-    background: rgba(14, 14, 14, 0.76);
+    /* background: rgba(14, 14, 14, 0.76); */
     padding: 2rem;
     overflow: hidden;
   }
@@ -91,6 +96,23 @@
     font-size: 0.8rem;
     font-weight: 100;
     opacity: 0.8;
+  }
+
+  a {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    text-decoration: none;
+    color: currentColor;
+    font-size: 4rem;
+    font-weight: 100;
+    opacity: 0.8;
+    transition: .2s;
+    margin-top: 5rem;
+  }
+
+  a:hover {
+    color: rgb(255, 105, 64);
   }
 
   @media screen and (max-width: 1122px) {

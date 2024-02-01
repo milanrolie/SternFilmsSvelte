@@ -13,8 +13,19 @@
 
 <Navigation />
 <HeaderSlug {data}/>
+
+<section>
 <Footer />
+</section>
 
 
+<style>
+  section {
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.675);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); 
+  }
+</style>
 
 

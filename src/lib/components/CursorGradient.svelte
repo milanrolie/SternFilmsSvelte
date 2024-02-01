@@ -1,11 +1,26 @@
 <script>
  import { onMount } from "svelte";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
 
 let mouseX = 0;
 let mouseY = 0;
 
 onMount(() => {
   addEventListener("mousemove", handleMouseMove);
+
+  gsap.to(".gradient-circle", {
+    scrollTrigger: {
+      trigger: "body",
+      scrub: true,
+      start: "top",
+      end: "bottom+=7000",
+    },
+    backgroundColor: "orange", 
+  });
+
 });
 
 const smoothFactor = 0.05;
@@ -39,7 +54,7 @@ function updateDivPosition() {
     background-color: rgb(121, 207, 250);
     border-radius: 100%;
     filter: blur(150px);
-    z-index: -1;
+    z-index: 1;
     transform: translateX(-50%) translateY(-50%);
 }
 </style>
