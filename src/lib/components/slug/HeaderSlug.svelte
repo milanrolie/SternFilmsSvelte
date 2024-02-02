@@ -49,15 +49,17 @@
 
   <div class="video-container">
     <div class="overlay" class:visible={showOverlay}></div>
-    <video
+    <!-- <video
       autoplay
       loop
       muted
       playsinline
       src={data.projectData.data.project.videoShortWebm.url}
     >
-    </video>
-  </div>
+    </video> -->
+
+    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/875250336?h=18db1e89de&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="InWork_Traineeship_FINAL_NOsubs"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+    </div>
   
   <section class="info-container">
     <InfoButton />
