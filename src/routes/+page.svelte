@@ -15,10 +15,10 @@
 <CursorGradient />
 <!-- <Navigation /> -->
 <Hero />
-<!-- <Introduction />
-<Projects {data} />
-<ProjectList {data} />
-<Footer /> -->
+<!-- <Introduction /> -->
+<!-- <Projects {data} /> -->
+<!-- <ProjectList {data} /> -->
+<Footer />
 
 <!-- <Allprojects {data} /> -->
 
