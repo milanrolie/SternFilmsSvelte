@@ -8,29 +8,30 @@
   import Introduction from "../lib/components/Introduction.svelte";
   import ProjectList from "../lib/components/ProjectList.svelte";
   import Projects from "../lib/components/Projects.svelte";
-  import Allprojects from "../lib/components/slug/Allprojects.svelte"; 
-  
+  import Allprojects from "../lib/components/slug/Allprojects.svelte";
 </script>
 
 <IntroAnimation />
 <CursorGradient />
-<Navigation />
+<!-- <Navigation /> -->
 <Hero />
-<Introduction />
+<!-- <Introduction />
 <Projects {data} />
 <ProjectList {data} />
-<Footer />
+<Footer /> -->
 
 <!-- <Allprojects {data} /> -->
 
-<div class="none">
-</div>
-
+<div class="none"></div>
 
 <div class="grain" />
 
-<style>
+<!-- {#each data.allProjects as project }
+  <h1>{project.title}</h1>
+  <a href={project.slug}>project</a>
+{/each} -->
 
+<style>
   .bottom {
     margin-bottom: 2rem;
   }
@@ -62,7 +63,6 @@
   /* .none {
     opacity: 0;
   } */
-
 
   @keyframes grain {
     0%,
@@ -107,9 +107,3 @@
     }
   }
 </style>
-
-
-<!-- {#each data.allProjects as project }
-  <h1>{project.title}</h1>
-  <a href={project.slug}>project</a>
-{/each} -->
