@@ -1,5 +1,6 @@
 <script>
   import Showreel from "$lib/assets/Showreel_Stern_2023_V1.webm";
+  import mobileShowreel from "$lib/assets/62e33ad7-852f-403d-aa8b-d77f8f582fc3.mp4";
   import gradientBG from "$lib/assets/gradientBG.png";
   import { onMount } from "svelte";
   import { gsap } from "gsap";
@@ -116,7 +117,16 @@
     <div class="yellow blur"></div>
     <div class="red blur"></div>
     <img src={gradientBG} alt="" />
-    <video class="blur-gsap" src={Showreel} loop autoplay muted></video>
+    <video class="blur-gsap mobile-hide" src={Showreel} loop autoplay muted
+    ></video>
+    <video
+      class="blur-gsap mobile-show"
+      src={mobileShowreel}
+      loop
+      autoplay
+      muted
+      playsinline
+    ></video>
     <h1>
       <span class="indent"> </span>
     </h1>
@@ -303,6 +313,14 @@
 
   .desktop {
     display: block;
+  }
+
+  .mobile-hide {
+    display: block;
+  }
+
+  .mobile-show {
+    display: none;
   }
 
   .background-wrapper {
@@ -517,6 +535,14 @@
 
     .blur {
       display: none;
+    }
+
+    .mobile-hide {
+      display: none;
+    }
+
+    .mobile-show {
+      display: block;
     }
   }
 </style>
